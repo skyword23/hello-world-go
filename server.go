@@ -14,12 +14,12 @@ type Task struct {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 
-	fmt.Fprintf(w, "<h1>Hello World!</h1>")
+    fmt.Fprintf(w, "<h1>Hello World!</h1>")
 }
 
 func retrieveHandler(w http.ResponseWriter, r *http.Request) {
 	
-	ctx := context.Background()
+    ctx := context.Background()
     dsClient, err := datastore.NewClient(ctx, "notional-portal-146510")
     if err != nil {
         fmt.Fprintf(w, "%s", err)
@@ -43,10 +43,10 @@ func retrieveHandler(w http.ResponseWriter, r *http.Request) {
 
 func saveHandler(w http.ResponseWriter, r *http.Request) {
 
-	ctx := context.Background()
+    ctx := context.Background()
     dsClient, err := datastore.NewClient(ctx, "notional-portal-146510")
     if err != nil {
-		fmt.Fprintf(w, "%s", err)
+	fmt.Fprintf(w, "%s", err)
         return
     }
 
@@ -63,7 +63,7 @@ func saveHandler(w http.ResponseWriter, r *http.Request) {
     e.Value = input
 
     if _, err := dsClient.Put(ctx, k, e); err != nil {
-		fmt.Fprintf(w, "%s", err)
+	fmt.Fprintf(w, "%s", err)
         return
     }
 
